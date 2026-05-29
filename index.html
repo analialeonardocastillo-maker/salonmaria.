@@ -1,0 +1,439 @@
+📄 index.html — Salón María (Versión Final Premium)
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salón María</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --dark:#0f172a;
+    --primary:#7c3aed;
+    --soft:#f5f3ff;
+    --text:#475569;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--soft);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+    color:var(--dark);
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:var(--primary);
+    transition:0.4s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.35)),
+    url('jpg7.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-content{
+    max-width:720px;
+    color:white;
+}
+
+.hero-content span{
+    color:#c4b5fd;
+    letter-spacing:3px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.hero-content h1{
+    font-family:'Playfair Display',serif;
+    font-size:85px;
+    line-height:1.05;
+    margin:20px 0 30px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:2;
+    max-width:600px;
+    color:#e4e4e4;
+    margin-bottom:40px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:16px 42px;
+    background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 15px 35px rgba(124,58,237,0.35);
+}
+
+.btn:hover{
+    transform:translateY(-6px);
+    background:#6d28d9;
+}
+
+/* TITLES */
+
+.title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.title span{
+    color:var(--primary);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:14px;
+}
+
+.title h2{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin-top:12px;
+}
+
+/* ABOUT */
+
+.about{
+    padding:140px 8%;
+}
+
+.about-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:70px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 25px 50px rgba(0,0,0,0.12);
+}
+
+.about-text p{
+    color:var(--text);
+    line-height:2;
+    margin-bottom:25px;
+    font-size:17px;
+}
+
+/* SERVICES */
+
+.services{
+    padding:40px 8% 140px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:white;
+    padding:45px 35px;
+    border-radius:28px;
+    transition:0.5s;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:var(--primary);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,0,0,0.12);
+}
+
+.card h3{
+    margin:25px 0 15px;
+    font-size:26px;
+    font-family:'Playfair Display',serif;
+}
+
+.card p{
+    color:var(--text);
+    line-height:1.9;
+}
+
+.icon{
+    font-size:42px;
+}
+
+/* CONTACT */
+
+.contact{
+    margin:0 8% 100px;
+    background:#1e1b4b;
+    border-radius:35px;
+    padding:90px 40px;
+    text-align:center;
+    color:white;
+}
+
+.contact h2{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    color:#ddd6fe;
+    margin:12px 0;
+    font-size:17px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:58px;
+    }
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .title h2{
+        font-size:40px;
+    }
+
+    nav ul{
+        gap:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">Salón María</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span>Luxury Beauty Experience</span>
+
+        <h1>Elegancia, estilo y belleza profesional</h1>
+
+        <p>
+            Vive una experiencia exclusiva en cuidado personal,
+            maquillaje y estilismo con un ambiente sofisticado
+            diseñado para resaltar tu mejor versión.
+        </p>
+
+        <a href="servicios.html" class="btn">Explorar Servicios</a>
+
+    </div>
+
+</section>
+
+<section class="about">
+
+    <div class="title">
+        <span>Sobre Nosotros</span>
+        <h2>Un salón moderno y sofisticado</h2>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="jpg1.jpg">
+        </div>
+
+        <div class="about-text">
+
+            <p>
+                En Salón María combinamos técnicas modernas,
+                productos premium y atención personalizada para ofrecer
+                una experiencia elegante y de alta calidad.
+            </p>
+
+            <p>
+                Nuestro equipo profesional trabaja cuidadosamente
+                para crear estilos únicos que reflejen belleza,
+                confianza y sofisticación.
+            </p>
+
+            <a href="galeria.html" class="btn">Ver Galería</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="services">
+
+    <div class="title">
+        <span>Nuestros Servicios</span>
+        <h2>Servicios exclusivos</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💇</div>
+            <h3>Estilismo</h3>
+            <p>Peinados y cortes modernos adaptados a tu personalidad y estilo.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💄</div>
+            <h3>Maquillaje</h3>
+            <p>Maquillaje profesional para eventos especiales y ocasiones únicas.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💅</div>
+            <h3>Manicure</h3>
+            <p>Cuidado elegante y profesional para uñas y tratamientos estéticos.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact">
+
+    <h2>Contáctanos</h2>
+
+    <p>📍 Santo Domingo, República Dominicana</p>
+    <p>📞 809-555-1234</p>
+    <p>📧 salonmaria@gmail.com</p>
+
+</section>
+
+<footer>
+    © 2026 Salón María — Diseño moderno y profesional
+</footer>
+
+</body>
+</html>
